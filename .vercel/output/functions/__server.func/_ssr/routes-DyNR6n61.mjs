@@ -5,8 +5,8 @@ import { t as Lenis } from "../_libs/lenis.mjs";
 import { a as useScroll, i as useMotionValue, n as useSpring, o as motion, r as useTransform, s as AnimatePresence, t as useInView } from "../_libs/framer-motion.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-import { _ as Facebook, a as Sparkle, b as Building2, c as PartyPopper, d as MessageCircle, f as MapPin, g as Gem, h as Heart, i as Sparkles, l as Palette, m as Instagram, n as Wine, o as Quote, p as Mail, r as Sun, s as Phone, t as X, u as MessagesSquare, v as ClipboardList, x as Baby, y as Cake } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CnKlILPx.js
+import { S as ArrowUpRight, _ as Facebook, a as Sparkle, b as Building2, c as PartyPopper, d as MessageCircle, f as MapPin, g as Gem, h as Heart, i as Sparkles, l as Palette, m as Instagram, n as Wine, o as Quote, p as Mail, r as Sun, s as Phone, t as X, u as MessagesSquare, v as ClipboardList, x as Baby, y as Cake } from "../_libs/lucide-react.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DyNR6n61.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function SmoothScroll() {
@@ -838,41 +838,221 @@ var gallery_wedding_default = "/assets/gallery-wedding-CRlyKvkr.jpg";
 var gallery_mehndi_default = "/assets/gallery-mehndi-DKfpbFG4.jpg";
 var gallery_haldi_default = "/assets/gallery-haldi-CRTf-3dk.jpg";
 var gallery_babyshower_default = "/assets/gallery-babyshower-LiVBl400.jpeg";
+var _56_default = "/assets/56-Dnet69Zv.jpg";
 var gallery_engagement_default = "/assets/gallery-engagement-BDwS5xsv.jpg";
 var gallery_dining_default = "/assets/gallery-dining-EQejlNwd.jpg";
-var items = [
+var gallery_floral_default = "/assets/gallery-floral-BkvYp1hZ.jpg";
+var gallery_birthday_default = "/assets/gallery-birthday-DXK1VDif.jpg";
+var categories = [
 	{
-		img: gallery_wedding_default,
-		title: "Wedding Decor",
-		tag: "Grand Stages"
+		title: "Birthday Celebrations",
+		tag: "Joyful Milestones",
+		cover: gallery_birthday_default,
+		images: [
+			{
+				src: gallery_birthday_default,
+				alt: "Golden birthday celebration decor"
+			},
+			{
+				src: gallery_floral_default,
+				alt: "Birthday floral styling"
+			},
+			{
+				src: gallery_dining_default,
+				alt: "Birthday dining setup"
+			},
+			{
+				src: gallery_engagement_default,
+				alt: "Birthday stage backdrop"
+			}
+		]
 	},
 	{
-		img: gallery_mehndi_default,
-		title: "Mehndi Setups",
-		tag: "Festive Color"
+		title: "Baby Shower Decor",
+		tag: "Dreamy Pastels",
+		cover: gallery_babyshower_default,
+		images: [
+			{
+				src: gallery_babyshower_default,
+				alt: "Pastel baby shower setup"
+			},
+			{
+				src: _56_default,
+				alt: "Baby shower balloon arch"
+			},
+			{
+				src: gallery_floral_default,
+				alt: "Baby shower floral details"
+			},
+			{
+				src: gallery_dining_default,
+				alt: "Baby shower table styling"
+			}
+		]
 	},
 	{
-		img: gallery_haldi_default,
-		title: "Haldi Decorations",
-		tag: "Marigold Magic"
+		title: "Mehendi Decor",
+		tag: "Festive Color",
+		cover: gallery_mehndi_default,
+		images: [
+			{
+				src: gallery_mehndi_default,
+				alt: "Vibrant mehendi function decor"
+			},
+			{
+				src: gallery_haldi_default,
+				alt: "Colorful mehendi seating"
+			},
+			{
+				src: gallery_floral_default,
+				alt: "Mehendi floral accents"
+			},
+			{
+				src: gallery_birthday_default,
+				alt: "Mehendi celebration corner"
+			}
+		]
 	},
 	{
-		img: gallery_babyshower_default,
-		title: "Baby Shower Themes",
-		tag: "Dreamy Pastels"
+		title: "Shitabi Backdrop",
+		tag: "Traditional Charm",
+		cover: gallery_haldi_default,
+		images: [
+			{
+				src: gallery_haldi_default,
+				alt: "Shitabi backdrop styling"
+			},
+			{
+				src: gallery_engagement_default,
+				alt: "Shitabi stage arrangement"
+			},
+			{
+				src: gallery_wedding_default,
+				alt: "Shitabi drapery detail"
+			},
+			{
+				src: gallery_floral_default,
+				alt: "Shitabi floral framing"
+			}
+		]
 	},
 	{
-		img: gallery_engagement_default,
-		title: "Stage Designs",
-		tag: "Romantic Backdrops"
+		title: "Darees Backdrop",
+		tag: "Regal Drapery",
+		cover: gallery_engagement_default,
+		images: [
+			{
+				src: gallery_engagement_default,
+				alt: "Darees backdrop setting"
+			},
+			{
+				src: gallery_wedding_default,
+				alt: "Darees stage drapery"
+			},
+			{
+				src: gallery_dining_default,
+				alt: "Darees seating arrangement"
+			},
+			{
+				src: gallery_haldi_default,
+				alt: "Darees decor detail"
+			}
+		]
 	},
 	{
-		img: gallery_dining_default,
-		title: "Luxury Dining",
-		tag: "Opulent Tables"
+		title: "Wedding Stage Decor",
+		tag: "Grand Stages",
+		cover: gallery_wedding_default,
+		images: [
+			{
+				src: gallery_wedding_default,
+				alt: "Luxury wedding stage"
+			},
+			{
+				src: gallery_engagement_default,
+				alt: "Elegant engagement stage"
+			},
+			{
+				src: gallery_floral_default,
+				alt: "Wedding floral centerpiece"
+			},
+			{
+				src: gallery_dining_default,
+				alt: "Wedding reception dining"
+			}
+		]
+	},
+	{
+		title: "Entry Gates",
+		tag: "Grand Welcomes",
+		cover: gallery_floral_default,
+		images: [
+			{
+				src: gallery_floral_default,
+				alt: "Floral entry gate"
+			},
+			{
+				src: gallery_wedding_default,
+				alt: "Grand entrance styling"
+			},
+			{
+				src: gallery_haldi_default,
+				alt: "Marigold entry decor"
+			},
+			{
+				src: gallery_mehndi_default,
+				alt: "Festive entry arrangement"
+			}
+		]
+	},
+	{
+		title: "House Decor",
+		tag: "Intimate Spaces",
+		cover: gallery_dining_default,
+		images: [
+			{
+				src: gallery_dining_default,
+				alt: "Home celebration dining decor"
+			},
+			{
+				src: gallery_floral_default,
+				alt: "House floral styling"
+			},
+			{
+				src: gallery_birthday_default,
+				alt: "Home party decor"
+			},
+			{
+				src: gallery_babyshower_default,
+				alt: "Intimate home function setup"
+			}
+		]
+	},
+	{
+		title: "Interactive Activities",
+		tag: "Fun & Engagement",
+		cover: gallery_birthday_default,
+		images: [
+			{
+				src: gallery_birthday_default,
+				alt: "Interactive celebration activity"
+			},
+			{
+				src: gallery_mehndi_default,
+				alt: "Guest engagement corner"
+			},
+			{
+				src: gallery_dining_default,
+				alt: "Activity station styling"
+			},
+			{
+				src: _56_default,
+				alt: "Photo moment installation"
+			}
+		]
 	}
 ];
-function ShowcaseCard({ img, title, tag, index }) {
+function ShowcaseCard({ category, index, onOpen }) {
 	const ref = (0, import_react.useRef)(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
@@ -882,12 +1062,15 @@ function ShowcaseCard({ img, title, tag, index }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		ref,
 		className: `group relative ${index % 2 === 1 ? "lg:mt-20" : ""}`,
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "relative overflow-hidden rounded-[2rem] shadow-lift",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+			type: "button",
+			onClick: onOpen,
+			"aria-label": `View ${category.title} gallery`,
+			className: "relative block w-full overflow-hidden rounded-[2rem] text-left shadow-lift",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.img, {
-					src: img,
-					alt: `${title} by Be Creative`,
+					src: category.cover,
+					alt: `${category.title} by Be Creative`,
 					loading: "lazy",
 					style: { y },
 					className: "h-[26rem] w-full scale-110 object-cover transition-transform duration-700 group-hover:scale-125 sm:h-[32rem]"
@@ -895,24 +1078,168 @@ function ShowcaseCard({ img, title, tag, index }) {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-t from-burgundy/75 via-burgundy/10 to-transparent" }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "absolute inset-x-0 bottom-0 p-7",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-xs uppercase tracking-[0.25em] text-gold-soft",
-						children: tag
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-						className: "mt-1 font-display text-3xl font-semibold text-ivory",
-						children: title
-					})]
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-xs uppercase tracking-[0.25em] text-gold-soft",
+							children: category.tag
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+							className: "mt-1 font-display text-3xl font-semibold text-ivory",
+							children: category.title
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+							className: "mt-3 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] text-gold-soft opacity-0 transition-all duration-500 group-hover:opacity-100",
+							children: ["View Gallery ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "h-3.5 w-3.5" })]
+						})
+					]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-gold/0 transition-all duration-500 group-hover:ring-gold/60" })
 			]
 		})
 	});
 }
+function CategoryGallery({ category, onClose }) {
+	const [active, setActive] = (0, import_react.useState)(null);
+	(0, import_react.useEffect)(() => {
+		const onKey = (e) => {
+			if (e.key !== "Escape") return;
+			if (active !== null) setActive(null);
+			else onClose();
+		};
+		window.addEventListener("keydown", onKey);
+		return () => window.removeEventListener("keydown", onKey);
+	}, [active, onClose]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+		initial: { opacity: 0 },
+		animate: { opacity: 1 },
+		exit: { opacity: 0 },
+		onClick: onClose,
+		"data-lenis-prevent": true,
+		className: "fixed inset-0 z-[60] overflow-y-auto bg-burgundy/90 backdrop-blur-md",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+				"aria-label": "Close gallery",
+				onClick: onClose,
+				className: "fixed right-6 top-6 z-10 flex h-11 w-11 items-center justify-center rounded-full glass-card text-ivory",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "h-5 w-5" })
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+				initial: {
+					opacity: 0,
+					y: 24
+				},
+				animate: {
+					opacity: 1,
+					y: 0
+				},
+				exit: {
+					opacity: 0,
+					y: 24
+				},
+				transition: {
+					duration: .5,
+					ease: [
+						.22,
+						1,
+						.36,
+						1
+					]
+				},
+				onClick: (e) => e.stopPropagation(),
+				className: "mx-auto max-w-6xl px-5 py-20 sm:px-8",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "text-center",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "font-script text-3xl text-rosegold",
+							children: category.tag
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+							className: "mt-1 font-display text-4xl font-semibold text-ivory sm:text-5xl",
+							children: category.title
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(GoldDivider, { className: "mt-5" })
+					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-12 columns-2 gap-4 sm:columns-3 [&>*]:mb-4",
+					children: category.images.map((img, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.button, {
+						initial: {
+							opacity: 0,
+							scale: .92
+						},
+						animate: {
+							opacity: 1,
+							scale: 1
+						},
+						transition: {
+							duration: .5,
+							delay: i * .06
+						},
+						onClick: () => setActive(i),
+						className: "group relative block w-full overflow-hidden rounded-2xl shadow-soft",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+								src: img.src,
+								alt: img.alt,
+								loading: "lazy",
+								className: "w-full object-cover transition-transform duration-700 group-hover:scale-110"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute inset-0 bg-burgundy/0 transition-colors duration-500 group-hover:bg-burgundy/25" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-gold/0 transition-all duration-500 group-hover:ring-gold/60" })
+						]
+					}, i))
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, { children: active !== null && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.div, {
+				initial: { opacity: 0 },
+				animate: { opacity: 1 },
+				exit: { opacity: 0 },
+				onClick: (e) => {
+					e.stopPropagation();
+					setActive(null);
+				},
+				className: "fixed inset-0 z-[70] flex items-center justify-center bg-burgundy/85 p-5 backdrop-blur-md",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					"aria-label": "Close image",
+					className: "absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full glass-card text-ivory",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "h-5 w-5" })
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(motion.img, {
+					initial: {
+						scale: .85,
+						opacity: 0
+					},
+					animate: {
+						scale: 1,
+						opacity: 1
+					},
+					exit: {
+						scale: .85,
+						opacity: 0
+					},
+					transition: {
+						duration: .4,
+						ease: [
+							.22,
+							1,
+							.36,
+							1
+						]
+					},
+					src: category.images[active].src,
+					alt: category.images[active].alt,
+					onClick: (e) => e.stopPropagation(),
+					className: "max-h-[85vh] max-w-full rounded-2xl object-contain shadow-lift"
+				}, active)]
+			}) })
+		]
+	});
+}
 function Showcase() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+	const [openCategory, setOpenCategory] = (0, import_react.useState)(null);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		id: "showcase",
 		className: "relative overflow-hidden bg-foreground py-24 text-ivory sm:py-32",
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-7xl px-5 sm:px-8",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "text-center",
@@ -929,15 +1256,19 @@ function Showcase() {
 				]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3",
-				children: items.map((it, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
+				children: categories.map((cat, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Reveal, {
 					delay: i * .05,
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShowcaseCard, {
-						...it,
-						index: i
+						category: cat,
+						index: i,
+						onOpen: () => setOpenCategory(cat)
 					})
-				}, it.title))
+				}, cat.title))
 			})]
-		})
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, { children: openCategory && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CategoryGallery, {
+			category: openCategory,
+			onClose: () => setOpenCategory(null)
+		}) })]
 	});
 }
 var steps = [
@@ -1229,7 +1560,7 @@ var images = [
 		alt: "Vibrant mehndi function decor"
 	},
 	{
-		src: "/assets/gallery-floral-BkvYp1hZ.jpg",
+		src: gallery_floral_default,
 		alt: "Champagne rose floral centerpiece"
 	},
 	{
@@ -1249,7 +1580,7 @@ var images = [
 		alt: "Elegant engagement stage"
 	},
 	{
-		src: "/assets/gallery-birthday-DXK1VDif.jpg",
+		src: gallery_birthday_default,
 		alt: "Golden birthday celebration decor"
 	}
 ];

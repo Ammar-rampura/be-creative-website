@@ -115,6 +115,19 @@ var createLucideIcon = (iconName, iconNode) => {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var ArrowUpRight = createLucideIcon("arrow-up-right", [["path", {
+	d: "M7 7h10v10",
+	key: "1tivn9"
+}], ["path", {
+	d: "M7 17 17 7",
+	key: "1vkiza"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Baby = createLucideIcon("baby", [
 	["path", {
 		d: "M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5",
@@ -592,4 +605,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { Facebook as _, Sparkle as a, Building2 as b, PartyPopper as c, MessageCircle as d, MapPin as f, Gem as g, Heart as h, Sparkles as i, Palette as l, Instagram as m, Wine as n, Quote as o, Mail as p, Sun as r, Phone as s, X as t, MessagesSquare as u, ClipboardList as v, Baby as x, Cake as y };
+export { ArrowUpRight as S, Facebook as _, Sparkle as a, Building2 as b, PartyPopper as c, MessageCircle as d, MapPin as f, Gem as g, Heart as h, Sparkles as i, Palette as l, Instagram as m, Wine as n, Quote as o, Mail as p, Sun as r, Phone as s, X as t, MessagesSquare as u, ClipboardList as v, Baby as x, Cake as y };
