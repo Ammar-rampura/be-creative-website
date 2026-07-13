@@ -7,11 +7,11 @@ const sections = [
 ];
 
 const services = [
-    "Weddings",
-    "Engagements",
-    "Mehndi & Haldi",
-    "Baby Showers",
-    "Corporate Events",
+    "Wedding Stage Decor",
+    "Mehendi Decor",
+    "Baby Shower Decor",
+    "Shitabi & Darees Backdrops",
+    "Entry Gates & House Decor",
 ];
 
 export function Footer() {
@@ -29,6 +29,14 @@ export function Footer() {
                     <p className="mt-5 text-xs uppercase tracking-[0.2em] text-gold-soft">
                         Rashida · Khadija · Arwa
                     </p>
+                    <a
+                        href="https://www.instagram.com/_.becreative?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-4 inline-block text-sm text-ivory/70 transition-colors hover:text-gold"
+                    >
+                        Instagram — @_.becreative
+                    </a>
                 </div>
 
                 <div>
@@ -63,6 +71,15 @@ export function Footer() {
                 <p className="text-center text-xs text-ivory/50">
                     © {new Date().getFullYear()} Be Creative. All rights reserved. Made with
                     love.
+                </p>
+                <p className="mt-2 text-center text-[11px] text-ivory/35">
+                    Made by Ameroids Tech Studio · For any query contact{" "}
+                    <a
+                        href="tel:+917723868522"
+                        className="transition-colors hover:text-gold"
+                    >
+                        +91 77238 68522
+                    </a>
                 </p>
             </div>
         </footer>

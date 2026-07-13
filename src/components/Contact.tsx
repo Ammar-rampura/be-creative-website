@@ -1,21 +1,36 @@
-import { useState, type FormEvent } from "react";
+import { type FormEvent } from "react";
 import { motion } from "motion/react";
-import { Phone, Mail, MapPin, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Instagram, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { Reveal } from "@/lib/anim";
 import { GoldDivider } from "@/components/Decor";
 
-export function Contact() {
-    const [sending, setSending] = useState(false);
+const WHATSAPP_NUMBER = "919713002052";
+const INSTAGRAM_URL =
+    "https://www.instagram.com/_.becreative?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
 
+export function Contact() {
+    // Enquiries are compiled into a WhatsApp message and sent to the
+    // Be Creative number — no backend involved.
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setSending(true);
-        setTimeout(() => {
-            setSending(false);
-            (e.target as HTMLFormElement).reset();
-            toast.success("Thank you! We'll be in touch within 24 hours.");
-        }, 900);
+        const form = e.target as HTMLFormElement;
+        const data = new FormData(form);
+        const message = [
+            "New Enquiry — Be Creative Website",
+            `Name: ${data.get("name")}`,
+            `Phone: ${data.get("phone") || "—"}`,
+            `Email: ${data.get("email")}`,
+            `Event Type: ${data.get("event") || "—"}`,
+            `Details: ${data.get("message") || "—"}`,
+        ].join("\n");
+        window.open(
+            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+            "_blank",
+            "noreferrer",
+        );
+        form.reset();
+        toast.success("Opening WhatsApp — just press send!");
     };
 
     return (
@@ -61,10 +76,9 @@ export function Contact() {
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                disabled={sending}
-                                className="mt-6 w-full rounded-full bg-foreground py-4 text-sm font-medium uppercase tracking-[0.18em] text-background shadow-soft transition-shadow hover:shadow-gold disabled:opacity-60"
+                                className="mt-6 w-full rounded-full bg-foreground py-4 text-sm font-medium uppercase tracking-[0.18em] text-background shadow-soft transition-shadow hover:shadow-gold"
                             >
-                                {sending ? "Sending…" : "Send Enquiry"}
+                                Send Enquiry on WhatsApp
                             </motion.button>
                         </form>
                     </Reveal>
@@ -92,13 +106,10 @@ export function Contact() {
                                     </div>
                                 } 
                             />
-                            <InfoRow icon={Mail} label="Email Us" value="hello@becreative.events" href="mailto:hello@becreative.events" />
                             <InfoRow icon={MapPin} label="Visit Us" value="Indore, Madhya Pradesh, India" />
 
                             <div className="flex gap-3">
-                                <Social icon={Instagram} href="https://instagram.com" label="Instagram" />
-                                <Social icon={Facebook} href="https://facebook.com" label="Facebook" />
-                                <Social icon={MessageCircle} href="https://wa.me/919876543210" label="WhatsApp" />
+                                <Social icon={Instagram} href={INSTAGRAM_URL} label="Instagram" />
                             </div>
 
                             <div className="mt-1 overflow-hidden rounded-[2rem] shadow-soft ring-1 ring-border">
@@ -117,7 +128,7 @@ export function Contact() {
 
             {/* Floating WhatsApp */}
             <a
-                href="https://wa.me/919876543210"
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Chat on WhatsApp"

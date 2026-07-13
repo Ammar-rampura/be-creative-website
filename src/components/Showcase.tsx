@@ -8,125 +8,86 @@ import {
 import { X, ArrowUpRight } from "lucide-react";
 import { Reveal, RevealText } from "@/lib/anim";
 import { GoldDivider } from "@/components/Decor";
-import wedding from "@/assets/gallery-wedding.jpg";
-import mehndi from "@/assets/gallery-mehndi.jpg";
-import haldi from "@/assets/gallery-haldi.jpg";
-import baby from "@/assets/gallery-babyshower.jpeg";
-import babyArch from "@/assets/56.jpg";
-import engagement from "@/assets/gallery-engagement.jpg";
-import dining from "@/assets/gallery-dining.jpg";
-import floral from "@/assets/gallery-floral.jpg";
-import birthday from "@/assets/gallery-birthday.jpg";
+
+// Every category folder under src/assets: the "*hero*" file is the card
+// cover, the numbered photos (and videos) fill its click-open gallery.
+const categoryImages = import.meta.glob("../assets/*/*.{jpg,jpeg,png}", {
+    eager: true,
+    import: "default",
+}) as Record<string, string>;
+
+const categoryVideos = import.meta.glob("../assets/*/*.mp4", {
+    eager: true,
+    import: "default",
+}) as Record<string, string>;
+
+type GalleryItem = { type: "image" | "video"; src: string; alt: string };
 
 type Category = {
     title: string;
     tag: string;
     cover: string;
-    images: { src: string; alt: string }[];
+    items: GalleryItem[];
 };
 
-// Placeholder images reused across categories until real photos are added.
-const categories: Category[] = [
+const categoryDefs = [
     {
         title: "Birthday Celebrations",
         tag: "Joyful Milestones",
-        cover: birthday,
-        images: [
-            { src: birthday, alt: "Golden birthday celebration decor" },
-            { src: floral, alt: "Birthday floral styling" },
-            { src: dining, alt: "Birthday dining setup" },
-            { src: engagement, alt: "Birthday stage backdrop" },
-        ],
+        folder: "birthday-celebration",
     },
-    {
-        title: "Baby Shower Decor",
-        tag: "Dreamy Pastels",
-        cover: baby,
-        images: [
-            { src: baby, alt: "Pastel baby shower setup" },
-            { src: babyArch, alt: "Baby shower balloon arch" },
-            { src: floral, alt: "Baby shower floral details" },
-            { src: dining, alt: "Baby shower table styling" },
-        ],
-    },
-    {
-        title: "Mehendi Decor",
-        tag: "Festive Color",
-        cover: mehndi,
-        images: [
-            { src: mehndi, alt: "Vibrant mehendi function decor" },
-            { src: haldi, alt: "Colorful mehendi seating" },
-            { src: floral, alt: "Mehendi floral accents" },
-            { src: birthday, alt: "Mehendi celebration corner" },
-        ],
-    },
+    { title: "Baby Shower Decor", tag: "Dreamy Pastels", folder: "baby shower" },
+    { title: "Mehendi Decor", tag: "Festive Color", folder: "mehendi" },
     {
         title: "Shitabi Backdrop",
         tag: "Traditional Charm",
-        cover: haldi,
-        images: [
-            { src: haldi, alt: "Shitabi backdrop styling" },
-            { src: engagement, alt: "Shitabi stage arrangement" },
-            { src: wedding, alt: "Shitabi drapery detail" },
-            { src: floral, alt: "Shitabi floral framing" },
-        ],
+        folder: "shitabi backdrop",
     },
-    {
-        title: "Darees Backdrop",
-        tag: "Regal Drapery",
-        cover: engagement,
-        images: [
-            { src: engagement, alt: "Darees backdrop setting" },
-            { src: wedding, alt: "Darees stage drapery" },
-            { src: dining, alt: "Darees seating arrangement" },
-            { src: haldi, alt: "Darees decor detail" },
-        ],
-    },
+    { title: "Darees Backdrop", tag: "Regal Drapery", folder: "darees backdrop" },
     {
         title: "Wedding Stage Decor",
         tag: "Grand Stages",
-        cover: wedding,
-        images: [
-            { src: wedding, alt: "Luxury wedding stage" },
-            { src: engagement, alt: "Elegant engagement stage" },
-            { src: floral, alt: "Wedding floral centerpiece" },
-            { src: dining, alt: "Wedding reception dining" },
-        ],
+        folder: "wedding stage decor",
     },
-    {
-        title: "Entry Gates",
-        tag: "Grand Welcomes",
-        cover: floral,
-        images: [
-            { src: floral, alt: "Floral entry gate" },
-            { src: wedding, alt: "Grand entrance styling" },
-            { src: haldi, alt: "Marigold entry decor" },
-            { src: mehndi, alt: "Festive entry arrangement" },
-        ],
-    },
-    {
-        title: "House Decor",
-        tag: "Intimate Spaces",
-        cover: dining,
-        images: [
-            { src: dining, alt: "Home celebration dining decor" },
-            { src: floral, alt: "House floral styling" },
-            { src: birthday, alt: "Home party decor" },
-            { src: baby, alt: "Intimate home function setup" },
-        ],
-    },
+    { title: "Entry Gates", tag: "Grand Welcomes", folder: "entry gates" },
+    { title: "House Decor", tag: "Intimate Spaces", folder: "house decor" },
     {
         title: "Interactive Activities",
         tag: "Fun & Engagement",
-        cover: birthday,
-        images: [
-            { src: birthday, alt: "Interactive celebration activity" },
-            { src: mehndi, alt: "Guest engagement corner" },
-            { src: dining, alt: "Activity station styling" },
-            { src: babyArch, alt: "Photo moment installation" },
-        ],
+        folder: "interactive activities",
     },
 ];
+
+const categories: Category[] = categoryDefs.map(({ title, tag, folder }) => {
+    const prefix = `../assets/${folder}/`;
+    const imgs = Object.entries(categoryImages).filter(([p]) =>
+        p.startsWith(prefix),
+    );
+    const hero = imgs.find(([p]) => p.toLowerCase().includes("hero"));
+    const photoNumber = (p: string) => parseInt(p.slice(prefix.length)) || 0;
+    const photos: GalleryItem[] = imgs
+        .filter(([p]) => p !== hero?.[0])
+        .sort(([a], [b]) => photoNumber(a) - photoNumber(b))
+        .map(([, src], i) => ({
+            type: "image",
+            src,
+            alt: `${title} by Be Creative ${i + 1}`,
+        }));
+    const videos: GalleryItem[] = Object.entries(categoryVideos)
+        .filter(([p]) => p.startsWith(prefix))
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([, src], i) => ({
+            type: "video",
+            src,
+            alt: `${title} video ${i + 1}`,
+        }));
+    return {
+        title,
+        tag,
+        cover: hero?.[1] ?? photos[0]?.src ?? "",
+        items: [...photos, ...videos],
+    };
+});
 
 function ShowcaseCard({
     category,
@@ -233,25 +194,44 @@ function CategoryGallery({
                 </div>
 
                 <div className="mt-12 columns-2 gap-4 sm:columns-3 [&>*]:mb-4">
-                    {category.images.map((img, i) => (
-                        <motion.button
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.92 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5, delay: i * 0.06 }}
-                            onClick={() => setActive(i)}
-                            className="group relative block w-full overflow-hidden rounded-2xl shadow-soft"
-                        >
-                            <img
-                                src={img.src}
-                                alt={img.alt}
-                                loading="lazy"
-                                className="w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
-                            <span className="absolute inset-0 bg-burgundy/0 transition-colors duration-500 group-hover:bg-burgundy/25" />
-                            <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-gold/0 transition-all duration-500 group-hover:ring-gold/60" />
-                        </motion.button>
-                    ))}
+                    {category.items.map((item, i) =>
+                        item.type === "video" ? (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, scale: 0.92 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: Math.min(i, 8) * 0.06 }}
+                                className="relative overflow-hidden rounded-2xl shadow-soft"
+                            >
+                                <video
+                                    src={item.src}
+                                    aria-label={item.alt}
+                                    controls
+                                    playsInline
+                                    preload="metadata"
+                                    className="w-full rounded-2xl"
+                                />
+                            </motion.div>
+                        ) : (
+                            <motion.button
+                                key={i}
+                                initial={{ opacity: 0, scale: 0.92 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: Math.min(i, 8) * 0.06 }}
+                                onClick={() => setActive(i)}
+                                className="group relative block w-full overflow-hidden rounded-2xl shadow-soft"
+                            >
+                                <img
+                                    src={item.src}
+                                    alt={item.alt}
+                                    loading="lazy"
+                                    className="w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <span className="absolute inset-0 bg-burgundy/0 transition-colors duration-500 group-hover:bg-burgundy/25" />
+                                <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-gold/0 transition-all duration-500 group-hover:ring-gold/60" />
+                            </motion.button>
+                        ),
+                    )}
                 </div>
             </motion.div>
 
@@ -279,8 +259,8 @@ function CategoryGallery({
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.85, opacity: 0 }}
                             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                            src={category.images[active].src}
-                            alt={category.images[active].alt}
+                            src={category.items[active].src}
+                            alt={category.items[active].alt}
                             onClick={(e) => e.stopPropagation()}
                             className="max-h-[85vh] max-w-full rounded-2xl object-contain shadow-lift"
                         />
@@ -293,6 +273,20 @@ function CategoryGallery({
 
 export function Showcase() {
     const [openCategory, setOpenCategory] = useState<Category | null>(null);
+
+    // "Discover" buttons in the Services section open a category here.
+    useEffect(() => {
+        const handler = (e: Event) => {
+            const title = (e as CustomEvent<string>).detail;
+            const cat = categories.find((c) => c.title === title);
+            if (cat) {
+                document.getElementById("showcase")?.scrollIntoView();
+                setOpenCategory(cat);
+            }
+        };
+        window.addEventListener("open-showcase-category", handler);
+        return () => window.removeEventListener("open-showcase-category", handler);
+    }, []);
 
     return (
         <section

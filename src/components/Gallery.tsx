@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from "motion/react";
 import { X } from "lucide-react";
 import { GoldDivider } from "@/components/Decor";
 import wedding from "@/assets/gallery-wedding.jpg";
-import mehndi from "@/assets/gallery-mehndi.jpg";
+import mehndi from "@/assets/mehendi/mehendi-hero.jpeg";
 import haldi from "@/assets/gallery-haldi.jpg";
-import baby from "@/assets/gallery-babyshower.jpeg";
+import baby from "@/assets/baby shower/baby-shower-hero.jpeg";
 import engagement from "@/assets/gallery-engagement.jpg";
 import floral from "@/assets/gallery-floral.jpg";
 import dining from "@/assets/gallery-dining.jpg";
-import birthday from "@/assets/gallery-birthday.jpg";
+import birthday from "@/assets/birthday-celebration/birthday-hero.jpg";
 
 const images = [
     { src: wedding, alt: "Luxury wedding stage" },

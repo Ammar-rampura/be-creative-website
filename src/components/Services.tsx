@@ -3,25 +3,33 @@ import {
     Heart,
     Gem,
     Sparkles,
-    Sun,
+    Crown,
     Baby,
     Cake,
-    Wine,
-    Building2,
+    DoorOpen,
+    PartyPopper,
 } from "lucide-react";
 import { Reveal, staggerContainer, staggerItem } from "@/lib/anim";
 import { GoldDivider } from "@/components/Decor";
 
+// Each service maps to a Showcase category — "Discover" opens that
+// category's photo gallery in the Showcase section.
 const services = [
-    { icon: Heart, title: "Wedding Planning", desc: "Grand, soulful weddings designed and executed end to end." },
-    { icon: Gem, title: "Engagement Events", desc: "Romantic ring ceremonies with refined, elegant staging." },
-    { icon: Sparkles, title: "Mehndi Celebrations", desc: "Vibrant, festive setups bursting with color and joy." },
-    { icon: Sun, title: "Haldi Ceremonies", desc: "Sunlit marigold décor for radiant traditional rituals." },
-    { icon: Baby, title: "Baby Showers", desc: "Soft, dreamy themes to welcome your little blessing." },
-    { icon: Cake, title: "Birthday Parties", desc: "Playful to opulent celebrations for every milestone." },
-    { icon: Wine, title: "Anniversary Events", desc: "Intimate, heartfelt evenings honoring love and time." },
-    { icon: Building2, title: "Corporate Events", desc: "Polished, impactful gatherings that elevate your brand." },
+    { icon: Heart, title: "Wedding Stage Decor", desc: "Grand stages and floral backdrops crafted for your big day." },
+    { icon: Cake, title: "Birthday Celebrations", desc: "Playful to opulent birthday setups for every milestone." },
+    { icon: Baby, title: "Baby Shower Decor", desc: "Soft, dreamy themes to welcome your little blessing." },
+    { icon: Sparkles, title: "Mehendi Decor", desc: "Vibrant, festive mehendi setups bursting with color and joy." },
+    { icon: Crown, title: "Shitabi Backdrop", desc: "Traditional shitabi settings styled with timeless charm." },
+    { icon: Gem, title: "Darees Backdrop", desc: "Regal darees drapery for graceful, elegant gatherings." },
+    { icon: DoorOpen, title: "Entry Gates", desc: "Grand floral entryways that welcome your guests in style." },
+    { icon: PartyPopper, title: "Interactive Activities", desc: "Fun, engaging activity corners your guests will love." },
 ];
+
+function openShowcaseCategory(title: string) {
+    window.dispatchEvent(
+        new CustomEvent("open-showcase-category", { detail: title }),
+    );
+}
 
 export function Services() {
     return (
@@ -50,12 +58,15 @@ export function Services() {
                     className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
                 >
                     {services.map((s) => (
-                        <motion.div
+                        <motion.button
                             key={s.title}
+                            type="button"
+                            onClick={() => openShowcaseCategory(s.title)}
+                            aria-label={`Discover ${s.title}`}
                             variants={staggerItem}
                             whileHover={{ y: -12 }}
                             transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                            className="group relative overflow-hidden rounded-3xl glass-card p-7 shadow-soft transition-shadow hover:shadow-gold"
+                            className="group relative overflow-hidden rounded-3xl glass-card p-7 text-left shadow-soft transition-shadow hover:shadow-gold"
                         >
                             <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gold/0 blur-2xl transition-all duration-500 group-hover:bg-gold/30" />
                             <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-gold/20 to-rosegold/20 text-gold transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
@@ -70,7 +81,7 @@ export function Services() {
                             <span className="relative mt-5 inline-flex items-center gap-1 text-xs font-medium uppercase tracking-[0.18em] text-gold opacity-0 transition-all duration-300 group-hover:opacity-100">
                                 Discover →
                             </span>
-                        </motion.div>
+                        </motion.button>
                     ))}
                 </motion.div>
 

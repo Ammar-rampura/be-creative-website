@@ -7,26 +7,26 @@ const testimonials = [
     {
         quote:
             "Be Creative turned our wedding into a fairytale. Every detail was flawless, elegant and beyond what we imagined. Our guests are still talking about it.",
-        name: "Aisha & Yusuf",
+        name: "Husain & Sakina",
         event: "Wedding",
     },
     {
         quote:
-            "The mehndi setup was a riot of color and joy. They understood our culture and elevated it with such taste. Truly world-class artistry.",
-        name: "Fatima R.",
-        event: "Mehndi Celebration",
+            "The mehendi setup was a riot of color and joy. They understood our culture and elevated it with such taste. Truly world-class artistry.",
+        name: "Fatema M.",
+        event: "Mehendi Celebration",
     },
     {
         quote:
             "Our baby shower felt like a dream — soft, magical and so thoughtfully designed. The team handled everything with grace and warmth.",
-        name: "Zainab & Ali",
+        name: "Insiya & Mohammed",
         event: "Baby Shower",
     },
     {
         quote:
-            "Professional, creative and deeply caring. They transformed our corporate gala into an unforgettable evening. Highly recommended.",
-        name: "Mohammed I.",
-        event: "Corporate Event",
+            "Professional, creative and deeply caring. They transformed my daughter's birthday into an unforgettable evening. Highly recommended.",
+        name: "Zahabiya B.",
+        event: "Birthday Celebration",
     },
 ];
 
