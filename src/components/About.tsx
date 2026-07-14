@@ -24,7 +24,7 @@ const founders = [
 
 export function About() {
     return (
-        <section id="about" className="relative bg-cream-gradient py-24 sm:py-32">
+        <section id="about" className="relative overflow-hidden bg-cream-gradient py-24 sm:py-32">
             <SparkleField count={10} />
             <div className="mx-auto max-w-7xl px-5 sm:px-8">
                 <div className="grid items-center gap-14 lg:grid-cols-2">

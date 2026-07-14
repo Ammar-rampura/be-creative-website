@@ -20,7 +20,7 @@ export function Timeline() {
     const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
     return (
-        <section className="relative bg-cream-gradient py-24 sm:py-32">
+        <section className="relative overflow-hidden bg-cream-gradient py-24 sm:py-32">
             <div className="mx-auto max-w-5xl px-5 sm:px-8">
                 <div className="text-center">
                     <p className="font-script text-3xl text-rosegold">The Journey</p>

@@ -26,7 +26,7 @@ export function Gallery() {
     const [active, setActive] = useState<number | null>(null);
 
     return (
-        <section id="gallery" className="relative py-24 sm:py-32">
+        <section id="gallery" className="relative overflow-hidden py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-5 sm:px-8">
                 <div className="text-center">
                     <p className="font-script text-3xl text-rosegold">Moments We Made</p>
