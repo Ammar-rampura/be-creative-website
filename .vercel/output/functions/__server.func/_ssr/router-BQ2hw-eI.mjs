@@ -8,10 +8,10 @@ import { a as useScroll, i as useMotionValue, n as useSpring, o as motion, r as 
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { _ as Cake, a as Phone, c as MessagesSquare, d as Instagram, f as Heart, g as ClipboardList, h as Crown, i as Quote, l as MessageCircle, m as DoorOpen, n as Sparkles, o as PartyPopper, p as Gem, r as Sparkle, s as Palette, t as X, u as MapPin, v as Baby, y as ArrowUpRight } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DvUyilha.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BQ2hw-eI.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-C_D6hnWD.css";
+var styles_default = "/assets/styles-_JFrNXcP.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -1094,7 +1094,7 @@ var _6_default$4 = "/assets/6-DAHa8VYw.jpeg";
 var _7_default$3 = "/assets/7-CxRZ7qQM.jpeg";
 var _8_default$2 = "/assets/8-Be2njGWi.jpeg";
 var _9_default$2 = "/assets/9-BIny0-q9.jpeg";
-var entrygate_hero_default = "/assets/entrygate-hero-CTft8vx1.jpeg";
+var entrygate_hero_default = "/assets/6-CTft8vx1.jpeg";
 var _1_default$4 = "/assets/1-DsJ5HjZM.jpeg";
 var _2_default$4 = "/assets/2-DyJO1pgf.jpeg";
 var _3_default$4 = "/assets/3-CznglZVq.jpeg";
@@ -1117,7 +1117,7 @@ var _2_default$2 = "/assets/2-DfHK54RQ.jpeg";
 var _3_default$2 = "/assets/3-abE8fwQs.jpeg";
 var _4_default$2 = "/assets/4-DxZIUVTe.jpeg";
 var _5_default$2 = "/assets/5-_8N6xMP9.jpeg";
-var _6_default$2 = "/assets/entrygate-hero-CTft8vx1.jpeg";
+var _6_default$2 = "/assets/6-CTft8vx1.jpeg";
 var _7_default$2 = "/assets/7-DAKeSVfL.jpeg";
 var _8_default$1 = "/assets/8-CMhfYxfr.jpeg";
 var _9_default$1 = "/assets/11-CJR5xWPs.jpeg";
@@ -1129,7 +1129,7 @@ var _4_default$1 = "/assets/4-Beupro9T.jpeg";
 var _5_default$1 = "/assets/5-CIhxuXYJ.jpeg";
 var _6_default$1 = "/assets/6-BK0XjpI_.jpeg";
 var _7_default$1 = "/assets/7-D-ciApoG.jpeg";
-var shitabi_hero_default = "/assets/8-VnQGGKsP.jpeg";
+var shitabi_hero_default = "/assets/shitabi-hero-VnQGGKsP.jpeg";
 var _1_default = "/assets/1-hv-64P8i.jpeg";
 var _10_default = "/assets/10-C3Rs0u6a.jpeg";
 var _11_default = "/assets/11-CBYQL0Jl.jpeg";
@@ -1146,7 +1146,7 @@ var _4_default = "/assets/4-qx6lX9Af.jpeg";
 var _5_default = "/assets/5-i6buHR44.jpeg";
 var _6_default = "/assets/9--34Gzsg9.jpeg";
 var _7_default = "/assets/7-BtVcILsW.jpeg";
-var _8_default = "/assets/8-VnQGGKsP.jpeg";
+var _8_default = "/assets/shitabi-hero-VnQGGKsP.jpeg";
 var _9_default = "/assets/9-DkJ07sxC.jpeg";
 var weddingstage_hero_default = "/assets/weddingstage-hero-D3xyxWip.jpeg";
 var video_1_default = "/assets/video-1-4ajgJvZI.mp4";
@@ -1757,14 +1757,14 @@ function Stats() {
 }
 var testimonials = [
 	{
-		quote: "Be Creative turned our wedding into a fairytale. Every detail was flawless, elegant and beyond what we imagined. Our guests are still talking about it.",
-		name: "Husain & Sakina",
+		quote: "Shukran! Ap ghana cooperative hata, ghanu fine decoration hato. Jem apna ghar ma shaadi hoe em apne kaam karea che — ap sagla ghanu dil si kaam karo che, apna samjhi ne. Hmne khabar bhi na pari. Everything well organised. Thanks 💐",
+		name: "Tasneem Wardhawala",
 		event: "Wedding"
 	},
 	{
-		quote: "The mehendi setup was a riot of color and joy. They understood our culture and elevated it with such taste. Truly world-class artistry.",
-		name: "Fatema M.",
-		event: "Mehendi Celebration"
+		quote: "Dil se shukriya Be Creative ki poori team ko ❤️ Hamare is khaas mauke ko itni khoobsurti aur perfection ke saath sajane aur yaadgaar banane ke liye hum dil se aabhari hain. Aap sab ne hamari expectations se bhi badhkar har function ko beautifully execute kiya. Aapki mehnat, professionalism aur har chhoti se chhoti detail ka khayal rakhne ke liye dil se thank you. Aapke saath yeh journey hamare liye bhi bahut hi special rahi. Aap sab ko dher saari duaayein aur best wishes. Allah aapko hamesha taraqqi aur kamyabi ata farmaaye 💖",
+		name: "Mariya Sabunwala",
+		event: "Wedding Celebrations"
 	},
 	{
 		quote: "Our baby shower felt like a dream — soft, magical and so thoughtfully designed. The team handled everything with grace and warmth.",
@@ -1799,7 +1799,7 @@ function Testimonials() {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(GoldDivider, { className: "mt-5" }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "relative mt-12 min-h-[18rem]",
+					className: "relative mt-12 min-h-[18rem] sm:min-h-[22rem]",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Quote, { className: "mx-auto h-12 w-12 text-gold/40" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatePresence, {
 						mode: "wait",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(motion.blockquote, {
@@ -1826,7 +1826,7 @@ function Testimonials() {
 							},
 							className: "mt-6",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-								className: "font-display text-2xl font-medium italic leading-relaxed text-foreground sm:text-3xl",
+								className: `font-display font-medium italic leading-relaxed text-foreground ${t.quote.length > 300 ? "text-lg sm:text-xl" : "text-2xl sm:text-3xl"}`,
 								children: [
 									"“",
 									t.quote,

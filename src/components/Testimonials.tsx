@@ -6,15 +6,15 @@ import { GoldDivider } from "@/components/Decor";
 const testimonials = [
     {
         quote:
-            "Be Creative turned our wedding into a fairytale. Every detail was flawless, elegant and beyond what we imagined. Our guests are still talking about it.",
-        name: "Husain & Sakina",
+            "Shukran! Ap ghana cooperative hata, ghanu fine decoration hato. Jem apna ghar ma shaadi hoe em apne kaam karea che — ap sagla ghanu dil si kaam karo che, apna samjhi ne. Hmne khabar bhi na pari. Everything well organised. Thanks 💐",
+        name: "Tasneem Wardhawala",
         event: "Wedding",
     },
     {
         quote:
-            "The mehendi setup was a riot of color and joy. They understood our culture and elevated it with such taste. Truly world-class artistry.",
-        name: "Fatema M.",
-        event: "Mehendi Celebration",
+            "Dil se shukriya Be Creative ki poori team ko ❤️ Hamare is khaas mauke ko itni khoobsurti aur perfection ke saath sajane aur yaadgaar banane ke liye hum dil se aabhari hain. Aap sab ne hamari expectations se bhi badhkar har function ko beautifully execute kiya. Aapki mehnat, professionalism aur har chhoti se chhoti detail ka khayal rakhne ke liye dil se thank you. Aapke saath yeh journey hamare liye bhi bahut hi special rahi. Aap sab ko dher saari duaayein aur best wishes. Allah aapko hamesha taraqqi aur kamyabi ata farmaaye 💖",
+        name: "Mariya Sabunwala",
+        event: "Wedding Celebrations",
     },
     {
         quote:
@@ -53,7 +53,7 @@ export function Testimonials() {
                 </h2>
                 <GoldDivider className="mt-5" />
 
-                <div className="relative mt-12 min-h-[18rem]">
+                <div className="relative mt-12 min-h-[18rem] sm:min-h-[22rem]">
                     <Quote className="mx-auto h-12 w-12 text-gold/40" />
                     <AnimatePresence mode="wait">
                         <motion.blockquote
@@ -64,7 +64,13 @@ export function Testimonials() {
                             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                             className="mt-6"
                         >
-                            <p className="font-display text-2xl font-medium italic leading-relaxed text-foreground sm:text-3xl">
+                            <p
+                                className={`font-display font-medium italic leading-relaxed text-foreground ${
+                                    t.quote.length > 300
+                                        ? "text-lg sm:text-xl"
+                                        : "text-2xl sm:text-3xl"
+                                }`}
+                            >
                                 “{t.quote}”
                             </p>
                             <footer className="mt-7">
