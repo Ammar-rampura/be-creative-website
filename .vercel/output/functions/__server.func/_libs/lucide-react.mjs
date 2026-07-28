@@ -1,5 +1,5 @@
 import { o as __toESM } from "../_runtime.mjs";
-import { r as require_react } from "./react+tanstack__react-query.mjs";
+import { n as require_react } from "./react+tanstack__react-query.mjs";
 //#region node_modules/lucide-react/dist/esm/shared/src/utils/mergeClasses.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 /**
@@ -347,16 +347,6 @@ var MapPin = createLucideIcon("map-pin", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var MessageCircle = createLucideIcon("message-circle", [["path", {
-	d: "M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719",
-	key: "1sd12s"
-}]]);
-/**
-* @license lucide-react v0.575.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
 var MessagesSquare = createLucideIcon("messages-square", [["path", {
 	d: "M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z",
 	key: "1n2ejm"
@@ -521,4 +511,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { Cake as _, Phone as a, MessagesSquare as c, Instagram as d, Heart as f, ClipboardList as g, Crown as h, Quote as i, MessageCircle as l, DoorOpen as m, Sparkles as n, PartyPopper as o, Gem as p, Sparkle as r, Palette as s, X as t, MapPin as u, Baby as v, ArrowUpRight as y };
+export { Baby as _, Phone as a, MessagesSquare as c, Heart as d, Gem as f, Cake as g, ClipboardList as h, Quote as i, MapPin as l, Crown as m, Sparkles as n, PartyPopper as o, DoorOpen as p, Sparkle as r, Palette as s, X as t, Instagram as u, ArrowUpRight as v };
