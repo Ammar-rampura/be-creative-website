@@ -1,7 +1,4 @@
-import { type FormEvent } from "react";
-import { motion } from "motion/react";
-import { Phone, MapPin, Instagram, MessageCircle } from "lucide-react";
-import { toast } from "sonner";
+import { Phone, MapPin, Instagram } from "lucide-react";
 import { Reveal } from "@/lib/anim";
 import { GoldDivider } from "@/components/Decor";
 
@@ -10,29 +7,6 @@ const INSTAGRAM_URL =
     "https://www.instagram.com/_.becreative?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
 
 export function Contact() {
-    // Enquiries are compiled into a WhatsApp message and sent to the
-    // Be Creative number — no backend involved.
-    const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const form = e.target as HTMLFormElement;
-        const data = new FormData(form);
-        const message = [
-            "New Enquiry — Be Creative Website",
-            `Name: ${data.get("name")}`,
-            `Phone: ${data.get("phone") || "—"}`,
-            `Email: ${data.get("email")}`,
-            `Event Type: ${data.get("event") || "—"}`,
-            `Details: ${data.get("message") || "—"}`,
-        ].join("\n");
-        window.open(
-            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
-            "_blank",
-            "noreferrer",
-        );
-        form.reset();
-        toast.success("Opening WhatsApp — just press send!");
-    };
-
     return (
         <section id="contact" className="relative overflow-hidden py-24 sm:py-32">
             <div className="absolute -right-24 top-0 h-72 w-72 rounded-full bg-champagne/40 blur-3xl" />
@@ -45,46 +19,9 @@ export function Contact() {
                     <GoldDivider className="mt-5" />
                 </div>
 
-                <div className="mt-16 grid gap-10 lg:grid-cols-2">
-                    {/* Form */}
-                    <Reveal>
-                        <form
-                            onSubmit={onSubmit}
-                            className="rounded-[2rem] glass-card p-7 shadow-soft sm:p-9"
-                        >
-                            <div className="grid gap-5 sm:grid-cols-2">
-                                <Field label="Full Name" name="name" placeholder="Your name" required />
-                                <Field label="Phone" name="phone" type="tel" placeholder="+91 00000 00000" />
-                                <div className="sm:col-span-2">
-                                    <Field label="Email" name="email" type="email" placeholder="you@email.com" required />
-                                </div>
-                                <div className="sm:col-span-2">
-                                    <Field label="Event Type" name="event" placeholder="Wedding, Mehndi, Baby Shower…" />
-                                </div>
-                                <div className="sm:col-span-2">
-                                    <label className="mb-1.5 block text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                                        Tell us about your dream event
-                                    </label>
-                                    <textarea
-                                        name="message"
-                                        rows={4}
-                                        placeholder="Share your vision, dates and guest count…"
-                                        className="w-full resize-none rounded-xl border border-border bg-background/60 px-4 py-3 text-sm outline-none transition-colors focus:border-gold"
-                                    />
-                                </div>
-                            </div>
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="mt-6 w-full rounded-full bg-foreground py-4 text-sm font-medium uppercase tracking-[0.18em] text-background shadow-soft transition-shadow hover:shadow-gold"
-                            >
-                                Send Enquiry on WhatsApp
-                            </motion.button>
-                        </form>
-                    </Reveal>
-
+                <div className="mt-16 mx-auto max-w-xl">
                     {/* Info */}
-                    <Reveal delay={0.1}>
+                    <Reveal>
                         <div className="flex h-full flex-col gap-5">
                             <InfoRow 
                                 icon={Phone} 
@@ -126,46 +63,7 @@ export function Contact() {
                 </div>
             </div>
 
-            {/* Floating WhatsApp */}
-            <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Chat on WhatsApp"
-                className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lift transition-transform hover:scale-110"
-            >
-                <MessageCircle className="h-7 w-7" />
-            </a>
         </section>
-    );
-}
-
-function Field({
-    label,
-    name,
-    type = "text",
-    placeholder,
-    required,
-}: {
-    label: string;
-    name: string;
-    type?: string;
-    placeholder?: string;
-    required?: boolean;
-}) {
-    return (
-        <div>
-            <label className="mb-1.5 block text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                {label}
-            </label>
-            <input
-                name={name}
-                type={type}
-                required={required}
-                placeholder={placeholder}
-                className="w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm outline-none transition-colors focus:border-gold"
-            />
-        </div>
     );
 }
 
