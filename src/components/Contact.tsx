@@ -83,14 +83,14 @@ function InfoRow({
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-gold/20 to-rosegold/20 text-gold">
                 <Icon className="h-5 w-5" strokeWidth={1.5} />
             </span>
-            <span className="min-w-0">
+            <div className="min-w-0">
                 <span className="block text-xs uppercase tracking-[0.2em] text-muted-foreground">
                     {label}
                 </span>
-                <span className="block truncate font-display text-lg text-foreground">
+                <div className="block truncate font-display text-lg text-foreground">
                     {value}
-                </span>
-            </span>
+                </div>
+            </div>
         </div>
     );
     return href ? <a href={href}>{content}</a> : content;
