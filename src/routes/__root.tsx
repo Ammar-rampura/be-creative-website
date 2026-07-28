@@ -116,9 +116,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                     description:
                         "Luxury event planning and management for weddings, engagements, mehndi, haldi, baby showers, birthdays, anniversaries and corporate events.",
                     founder: [
-                        { "@type": "Person", name: "Rashida Rampurawala" },
+                        { "@type": "Person", name: "Fatema Presswala" },
                         { "@type": "Person", name: "Khadija Tajpurwala" },
                         { "@type": "Person", name: "Arwa Khambati" },
+                        { "@type": "Person", name: "Rashida Rampurawala" },
                     ],
                 }),
             },
